@@ -1,0 +1,29 @@
+ @@@@@@   @@@  @@@@@@@@@@   @@@@@@@   @@@       @@@@@@@@  
+@@@@@@@   @@@  @@@@@@@@@@@  @@@@@@@@  @@@       @@@@@@@@  
+!@@       @@!  @@! @@! @@!  @@!  @@@  @@!       @@!       
+!@!       !@!  !@! !@! !@!  !@!  @!@  !@!       !@!       
+!!@@!!    !!@  @!! !!@ @!@  @!@@!@!   @!!       @!!!:!    
+ !!@!!!   !!!  !@!   ! !@!  !!@!!!    !!!       !!!!!:    
+     !:!  !!:  !!:     !!:  !!:       !!:       !!:       
+    !:!   :!:  :!:     :!:  :!:        :!:      :!:       
+:::: ::    ::  :::     ::    ::        :: ::::   :: ::::  
+:: : :    :     :      :     :        : :: : :  : :: ::   
+                                                          
+                                        
+@@@@@@@@  @@@@@@@@  @@@  @@@  @@@@@@@   
+@@@@@@@@  @@@@@@@@  @@@@ @@@  @@@@@@@@  
+     @@!  @@!       @@!@!@@@  @@!  @@@  
+    !@!   !@!       !@!!@!@!  !@!  @!@  
+   @!!    @!!!:!    @!@ !!@!  @!@  !@!  
+  !!!     !!!!!:    !@!  !!!  !@!  !!!  
+ !!:      !!:       !!:  !!!  !!:  !!!  
+:!:       :!:       :!:  !:!  :!:  !:!  
+ :: ::::   :: ::::   ::   ::   :::: ::  
+: :: : :  : :: ::   ::    :   :: :  :  
+
+IMHO, zend isn't very simple. Still very much in the works.
+
+This is my customization of a starter 'guestbook' application
+that I found on the zend framework website. I re-tooled it to just be a
+generic post app. the changes that I want to make are forcing
+me to get into the nitty gritty of the zf. it's how i learn. 
