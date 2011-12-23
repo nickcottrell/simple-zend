@@ -1,0 +1,19 @@
+<p><a href="<?php echo $this->url(
+    array(
+        'controller' => 'quickpost',
+        'action'     => 'post'
+    ),
+    'default',
+    true) ?>">Post Something</a></p>
+
+<p>Stuff that's been posted:</p>
+<ul>
+    <?php foreach ($this->entries as $entry): ?>
+    <li>
+	<?php echo $this->escape($entry->id) ?><br />
+    <?php echo $this->escape($entry->created) ?><br />
+    <?php echo $this->escape($entry->comment) ?><br />
+	<a href="##">remove this post</a>
+	</li>	
+    <?php endforeach ?>
+</ul>

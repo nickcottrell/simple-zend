@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+  <title>Simple Zend</title>
+
+<link href="/public/css/base.css" rel="stylesheet" type="text/css" />
+
+
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+
+<div id="wrap">
+			
+	<header>
+		<h1>
+			<a href="<?php echo $this->url(
+            array('controller'=>'quickpost'),
+            	'default', true) ?>">Simple Zend.</a>
+			</h1>
+	</header>
+
+    <nav><!--blank--></nav>
+
+<div id="content">
+
+<?php echo $this->layout()->content ?>
+
+</div><!--end #content-->
+</div><!--end #wrap-->
+
+	<footer>
+			<p>
+				<a href="<?php echo $this->url(
+            		array('controller'=>'quickpost'),
+            			'default', true) ?>">Simple Zend</a>&nbsp;|&nbsp;
+				
+				<a href="<?php echo $this->url(
+            		array(
+        				'controller' => 'quickpost',
+        				'action'     => 'post'
+    					),
+    					'default',
+    					true) ?>">Make a post</a>
+			</p>
+	</footer>
+</body>
+</html>
