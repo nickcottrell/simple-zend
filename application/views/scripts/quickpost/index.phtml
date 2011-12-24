@@ -8,7 +8,10 @@
 
 <p>Stuff that's been posted:</p>
 <ul>
-    <?php foreach ($this->entries as $entry): ?>
+    <?php 
+	sort($entry);
+
+	foreach ($this->entries as $entry): ?>
     <li>
 	<?php echo $this->escape($entry->id) ?><br />
     <?php echo $this->escape($entry->created) ?><br />

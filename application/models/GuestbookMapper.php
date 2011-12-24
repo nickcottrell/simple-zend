@@ -28,7 +28,7 @@ class Application_Model_GuestbookMapper
     {
         $data = array(
             'email'   => $guestbook->getEmail(),
-            'comment' => $guestbook->getComment(),
+            'comment' => $guestbook->getComment(	),
             'created' => date('Y-m-d H:i:s'),
         );
 
@@ -72,8 +72,12 @@ class Application_Model_GuestbookMapper
     }
 
     public function fetchAll()
-    {
-        $resultSet = $this->getDbTable()->fetchAll();
+    {	
+		$where = null;
+		$orderBy = 'id DESC';
+		$count = 10;
+		$offset = 0;
+        $resultSet = $this->getDbTable()->fetchAll($where, $orderBy, $count, $offset);
         $entries   = array();
         foreach ($resultSet as $row) {
             $entry = new Application_Model_Guestbook();

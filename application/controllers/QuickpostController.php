@@ -7,12 +7,12 @@ class QuickpostController extends Zend_Controller_Action
     {
         /* Initialize action controller here */
     }
+	
 
     public function indexAction()
     {
 
-		$guestbook = new Application_Model_GuestbookMapper();			
-
+		$guestbook = new Application_Model_GuestbookMapper('id DESC');	
 		$this->view->entries = $guestbook->fetchAll();
     }
 
