@@ -1,0 +1,15 @@
+<h1>Big Title</h1>
+
+<p>text string</p>
+
+
+    <?php 
+	sort($entry);
+
+	foreach ($this->entries as $entry): ?>
+    <p>
+	<?php echo $this->escape($entry->id) ?><br />
+    <?php echo $this->escape($entry->title) ?><br />
+    <?php echo $this->escape($entry->content) ?><br />
+	</p>	
+    <?php endforeach ?>

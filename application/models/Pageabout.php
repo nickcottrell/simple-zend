@@ -1,11 +1,9 @@
 <?php
 
-class Application_Model_Guestbook
+class Application_Model_Pageabout
 {
-    protected $_comment;
-    protected $_created;
-    protected $_email;
-    protected $_id;
+    protected $_content;
+    protected $_title;
 
 
     public function __construct(array $options = null)
@@ -19,7 +17,7 @@ class Application_Model_Guestbook
     {
         $method = 'set' . $name;
         if (('mapper' == $name) || !method_exists($this, $method)) {
-            throw new Exception('Invalid guestbook property');
+            throw new Exception('Invalid pageabout property');
         }
         $this->$method($value);
     }
@@ -28,7 +26,7 @@ class Application_Model_Guestbook
     {
         $method = 'get' . $name;
         if (('mapper' == $name) || !method_exists($this, $method)) {
-            throw new Exception('Invalid guestbook property');
+            throw new Exception('Invalid pageabout property');
         }
         return $this->$method();
     }
@@ -45,37 +43,26 @@ class Application_Model_Guestbook
         return $this;
     }
 
-    public function setComment($text)
+    public function setContent($content)
     {
-        $this->_comment = (string) $text;
+        $this->_content = (string) $content;
         return $this;
     }
 
-    public function getComment()
+    public function getContent()
     {
-        return $this->_comment;
+        return $this->_content;
     }
 
-    public function setEmail($email)
+    public function setTitle($title)
     {
-        $this->_email = (string) $email;
+        $this->_title = (string) $title;
         return $this;
     }
 
-    public function getEmail()
+    public function getTitle()
     {
-        return $this->_email;
-    }
-
-    public function setCreated($ts)
-    {
-        $this->_created = $ts;
-        return $this;
-    }
-
-    public function getCreated()
-    {
-        return $this->_created;
+        return $this->_title;
     }
 
     public function setId($id)

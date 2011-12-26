@@ -1,6 +1,6 @@
 <?php
 
-class Application_Model_GuestbookMapper
+class Application_Model_QuickpostMapper
 {
     protected $_dbTable;
 
@@ -19,20 +19,20 @@ class Application_Model_GuestbookMapper
     public function getDbTable()
     {
         if (null === $this->_dbTable) {
-            $this->setDbTable('Application_Model_DbTable_Guestbook');
+            $this->setDbTable('Application_Model_DbTable_Quickpost');
         }
         return $this->_dbTable;
     }
 
-    public function save(Application_Model_Guestbook $guestbook)
+    public function save(Application_Model_Quickpost $quickpost)
     {
         $data = array(
-            'email'   => $guestbook->getEmail(),
-            'comment' => $guestbook->getComment(	),
+            'email'   => $quickpost->getEmail(),
+            'comment' => $quickpost->getComment(	),
             'created' => date('Y-m-d H:i:s'),
         );
 
-        if (null === ($id = $guestbook->getId())) {
+        if (null === ($id = $quickpost->getId())) {
             unset($data['id']);
             $this->getDbTable()->insert($data);
         } else {
@@ -41,15 +41,15 @@ class Application_Model_GuestbookMapper
     }
 
 
-    public function delete(Application_Model_Guestbook $guestbook)
+    public function delete(Application_Model_Quickpost $quickpost)
     {
         $data = array(
-            'email'   => $guestbook->getEmail(),
-            'comment' => $guestbook->getComment(),
+            'email'   => $quickpost->getEmail(),
+            'comment' => $quickpost->getComment(),
             'created' => date('Y-m-d H:i:s'),
         );
 
-        if (null === ($id = $guestbook->getId())) {
+        if (null === ($id = $quickpost->getId())) {
             unset($data['id']);
             $this->getDbTable()->insert($data);
         } else {
@@ -58,14 +58,14 @@ class Application_Model_GuestbookMapper
 
     }
 
-    public function find($id, Application_Model_Guestbook $guestbook)
+    public function find($id, Application_Model_Quickpost $quickpost)
     {
         $result = $this->getDbTable()->find($id);
         if (0 == count($result)) {
             return;
         }
         $row = $result->current();
-        $guestbook->setId($row->id)
+        $quickpost->setId($row->id)
                   ->setEmail($row->email)
                   ->setComment($row->comment)
                   ->setCreated($row->created);
@@ -80,7 +80,7 @@ class Application_Model_GuestbookMapper
         $resultSet = $this->getDbTable()->fetchAll($where, $orderBy, $count, $offset);
         $entries   = array();
         foreach ($resultSet as $row) {
-            $entry = new Application_Model_Guestbook();
+            $entry = new Application_Model_Quickpost();
             $entry->setId($row->id)
                   ->setEmail($row->email)
                   ->setComment($row->comment)

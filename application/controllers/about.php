@@ -16,13 +16,6 @@ class QuickpostController extends Zend_Controller_Action
 		$this->view->entries = $quickpost->fetchAll();
     }
 
-    public function twoAction()
-    {
-
-		$quickpost = new Application_Model_QuickpostMapper();	
-		$this->view->entries = $quickpost->fetchAll();
-    }
-
     public function aboutAction()
     {
 
@@ -45,6 +38,11 @@ class QuickpostController extends Zend_Controller_Action
         }
 
         $this->view->form = $form;
+    }
+
+	public function deleteAction()
+    {
+       
     }
 
 

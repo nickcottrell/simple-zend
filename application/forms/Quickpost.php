@@ -1,6 +1,6 @@
 <?php
 
-class Application_Form_Guestbook extends Zend_Form
+class Application_Form_Quickpost extends Zend_Form
 {
 
     public function init()
