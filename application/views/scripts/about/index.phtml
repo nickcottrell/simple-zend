@@ -10,13 +10,13 @@
 	<h1><?php 
 	sort($entry);
 	foreach ($this->entries as $entry): ?>
-    <?php echo $this->escape($entry->email) ?>
+    <?php echo $this->escape($entry->pagetitle) ?>
     <?php endforeach ?></h1>
 
 	<?php 
 	sort($entry);
 	foreach ($this->entries as $entry): ?>
-    <?php echo $this->escape($entry->comment) ?>
+    <?php echo $this->escape($entry->content) ?>
     <?php endforeach ?>
 <br />
 

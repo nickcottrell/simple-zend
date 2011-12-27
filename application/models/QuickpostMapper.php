@@ -28,25 +28,8 @@ class Application_Model_QuickpostMapper
     {
         $data = array(
             'email'   => $quickpost->getEmail(),
-            'comment' => $quickpost->getComment(	),
-            'created' => date('Y-m-d H:i:s'),
-        );
-
-        if (null === ($id = $quickpost->getId())) {
-            unset($data['id']);
-            $this->getDbTable()->insert($data);
-        } else {
-            $this->getDbTable()->update($data, array('id = ?' => $id));
-        }
-    }
-
-
-    public function delete(Application_Model_Quickpost $quickpost)
-    {
-        $data = array(
-            'email'   => $quickpost->getEmail(),
             'comment' => $quickpost->getComment(),
-            'created' => date('Y-m-d H:i:s'),
+            'created' => date('m/d/Y H:i'),
         );
 
         if (null === ($id = $quickpost->getId())) {
@@ -55,7 +38,6 @@ class Application_Model_QuickpostMapper
         } else {
             $this->getDbTable()->update($data, array('id = ?' => $id));
         }
-
     }
 
     public function find($id, Application_Model_Quickpost $quickpost)

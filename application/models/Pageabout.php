@@ -2,9 +2,9 @@
 
 class Application_Model_Pageabout
 {
-    protected $_comment;
+    protected $_content;
     protected $_created;
-    protected $_email;
+    protected $_pagetitle;
     protected $_id;
 
 
@@ -45,26 +45,26 @@ class Application_Model_Pageabout
         return $this;
     }
 
-    public function setComment($text)
+    public function setContent($text)
     {
-        $this->_comment = (string) $text;
+        $this->_content = (string) $text;
         return $this;
     }
 
-    public function getComment()
+    public function getContent()
     {
-        return $this->_comment;
+        return $this->_content;
     }
 
-    public function setEmail($email)
+    public function setPagetitle($pagetitle)
     {
-        $this->_email = (string) $email;
+        $this->_pagetitle = (string) $pagetitle;
         return $this;
     }
 
-    public function getEmail()
+    public function getPagetitle()
     {
-        return $this->_email;
+        return $this->_pagetitle;
     }
 
     public function setCreated($ts)

@@ -9,7 +9,7 @@ class Application_Form_Pageabout extends Zend_Form
         $this->setMethod('post');
 
         // Add the title element
-        $this->addElement('text', 'email', array(
+        $this->addElement('text', 'pagetitle', array(
             'label'      => 'Page title:',
             'required'   => false,
             'filters'    => array('StringTrim'),
@@ -19,7 +19,7 @@ class Application_Form_Pageabout extends Zend_Form
         ));
 
         // Add the content element
-        $this->addElement('textarea', 'comment', array(
+        $this->addElement('textarea', 'content', array(
             'label'      => 'Page content:',
             'required'   => true,
             'validators' => array(

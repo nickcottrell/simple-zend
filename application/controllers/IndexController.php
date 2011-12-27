@@ -16,8 +16,7 @@ class IndexController extends Zend_Controller_Action
 		$this->view->entries = $quickpost->fetchAll();
     }
 
-
-    public function postAction()
+	public function postAction()
     {
         $request = $this->getRequest();
         $form    = new Application_Form_Quickpost();

@@ -27,8 +27,8 @@ class Application_Model_PageaboutMapper
     public function save(Application_Model_Pageabout $pageabout)
     {
         $data = array(
-            'email'   => $pageabout->getEmail(),
-            'comment' => $pageabout->getComment(	),
+            'pagetitle'   => $pageabout->getPagetitle(),
+            'content' => $pageabout->getContent(	),
             'created' => date('m/d/Y'),
         );
 
@@ -49,8 +49,8 @@ class Application_Model_PageaboutMapper
         }
         $row = $result->current();
         $pageabout->setId($row->id)
-                  ->setEmail($row->email)
-                  ->setComment($row->comment)
+                  ->setPagetitle($row->pagetitle)
+                  ->setContent($row->content)
                   ->setCreated($row->created);
     }
 
@@ -65,8 +65,8 @@ class Application_Model_PageaboutMapper
         foreach ($resultSet as $row) {
             $entry = new Application_Model_Pageabout();
             $entry->setId($row->id)
-                  ->setEmail($row->email)
-                  ->setComment($row->comment)
+                  ->setPagetitle($row->pagetitle)
+                  ->setContent($row->content)
                   ->setCreated($row->created);
             $entries[] = $entry;
         }
