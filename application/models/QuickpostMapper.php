@@ -75,7 +75,7 @@ class Application_Model_QuickpostMapper
     {	
 		$where = null;
 		$orderBy = 'id DESC';
-		$count = 10;
+		$count = 7;
 		$offset = 0;
         $resultSet = $this->getDbTable()->fetchAll($where, $orderBy, $count, $offset);
         $entries   = array();

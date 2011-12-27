@@ -2,8 +2,10 @@
 
 class Application_Model_Pageabout
 {
-    protected $_content;
-    protected $_title;
+    protected $_comment;
+    protected $_created;
+    protected $_email;
+    protected $_id;
 
 
     public function __construct(array $options = null)
@@ -43,26 +45,37 @@ class Application_Model_Pageabout
         return $this;
     }
 
-    public function setContent($content)
+    public function setComment($text)
     {
-        $this->_content = (string) $content;
+        $this->_comment = (string) $text;
         return $this;
     }
 
-    public function getContent()
+    public function getComment()
     {
-        return $this->_content;
+        return $this->_comment;
     }
 
-    public function setTitle($title)
+    public function setEmail($email)
     {
-        $this->_title = (string) $title;
+        $this->_email = (string) $email;
         return $this;
     }
 
-    public function getTitle()
+    public function getEmail()
     {
-        return $this->_title;
+        return $this->_email;
+    }
+
+    public function setCreated($ts)
+    {
+        $this->_created = $ts;
+        return $this;
+    }
+
+    public function getCreated()
+    {
+        return $this->_created;
     }
 
     public function setId($id)

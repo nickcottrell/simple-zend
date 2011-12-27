@@ -6,17 +6,13 @@
     'default',
     true) ?>">Post Something</a></p>
 
-<p>Stuff that's been posted:</p>
-<ul>
+
     <?php 
 	sort($entry);
-
 	foreach ($this->entries as $entry): ?>
-    <li>
-	<?php echo $this->escape($entry->id) ?><br />
-    <?php echo $this->escape($entry->created) ?><br />
-    <?php echo $this->escape($entry->comment) ?><br />
-	<a href="##">remove this post</a>
-	</li>	
+   	<hr />
+ 	<h2><?php echo $this->escape($entry->comment) ?></h2>
+    <sup>Posted on: <?php echo $this->escape($entry->created) ?></sup>
+	<br /><br />
+
     <?php endforeach ?>
-</ul>

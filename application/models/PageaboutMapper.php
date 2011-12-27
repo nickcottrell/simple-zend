@@ -27,24 +27,9 @@ class Application_Model_PageaboutMapper
     public function save(Application_Model_Pageabout $pageabout)
     {
         $data = array(
-            'content' => $pageabout->getContent(),
-            'title'   => $pageabout->getTitle(),
-        );
-
-        if (null === ($id = $pageabout->getId())) {
-            unset($data['id']);
-            $this->getDbTable()->insert($data);
-        } else {
-            $this->getDbTable()->update($data, array('id = ?' => $id));
-        }
-    }
-
-
-    public function delete(Application_Model_Pageabout $pageabout)
-    {
-        $data = array(
-            'content' => $pageabout->getContent(),
-            'title'   => $pageabout->getTitle(),
+            'email'   => $pageabout->getEmail(),
+            'comment' => $pageabout->getComment(	),
+            'created' => date('m/d/Y'),
         );
 
         if (null === ($id = $pageabout->getId())) {
@@ -63,14 +48,15 @@ class Application_Model_PageaboutMapper
             return;
         }
         $row = $result->current();
-        $pageabout->setContent($row->content)
-                  ->setTitle($row->title)
-				  ->setId($row->id);
+        $pageabout->setId($row->id)
+                  ->setEmail($row->email)
+                  ->setComment($row->comment)
+                  ->setCreated($row->created);
     }
 
     public function fetchAll()
     {	
-        $where = null;
+		$where = null;
 		$orderBy = 'id DESC';
 		$count = 1;
 		$offset = 0;
@@ -78,9 +64,10 @@ class Application_Model_PageaboutMapper
         $entries   = array();
         foreach ($resultSet as $row) {
             $entry = new Application_Model_Pageabout();
-            $entry->setContent($row->content)
-                  ->setTitle($row->title)
-				  ->setId($row->id);
+            $entry->setId($row->id)
+                  ->setEmail($row->email)
+                  ->setComment($row->comment)
+                  ->setCreated($row->created);
             $entries[] = $entry;
         }
         return $entries;

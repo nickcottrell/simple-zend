@@ -1,0 +1,10 @@
+<p><a href="<?php echo $this->url(
+    array(
+        'controller' => 'about',
+    ),
+    'default',
+    true) ?>">Cancel</a></p>
+<?php
+$this->form->setAction($this->url());
+echo $this->form;
+?>

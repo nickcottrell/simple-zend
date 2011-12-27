@@ -1,15 +1,30 @@
-<h1>Big Title</h1>
+<p><a href="<?php echo $this->url(
+    array(
+        'controller' => 'about',
+        'action'     => 'edit'
+    ),
+    'default',
+    true) ?>">Edit</a></p>
+    
 
-<p>text string</p>
-
-
-    <?php 
+	<h1><?php 
 	sort($entry);
-
 	foreach ($this->entries as $entry): ?>
-    <p>
-	<?php echo $this->escape($entry->id) ?><br />
-    <?php echo $this->escape($entry->title) ?><br />
-    <?php echo $this->escape($entry->content) ?><br />
-	</p>	
+    <?php echo $this->escape($entry->email) ?>
+    <?php endforeach ?></h1>
+<br />
+
+	<?php 
+	sort($entry);
+	foreach ($this->entries as $entry): ?>
+    <?php echo $this->escape($entry->comment) ?>
     <?php endforeach ?>
+<br />
+
+	<sub>Updated on: <?php 
+	sort($entry);
+	foreach ($this->entries as $entry): ?>
+    <?php echo $this->escape($entry->created) ?>
+    <?php endforeach ?></sub>
+
+

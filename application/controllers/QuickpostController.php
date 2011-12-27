@@ -16,19 +16,6 @@ class QuickpostController extends Zend_Controller_Action
 		$this->view->entries = $quickpost->fetchAll();
     }
 
-    public function twoAction()
-    {
-
-		$quickpost = new Application_Model_QuickpostMapper();	
-		$this->view->entries = $quickpost->fetchAll();
-    }
-
-    public function aboutAction()
-    {
-
-	$pageabout = new Application_Model_PageaboutMapper();	
-	$this->view->entries = $pageabout->fetchAll();
-    }
 
     public function postAction()
     {

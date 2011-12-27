@@ -8,29 +8,29 @@ class Application_Form_Pageabout extends Zend_Form
         // Set the method for the display form to POST
         $this->setMethod('post');
 
-        // Add an email element
+        // Add the title element
         $this->addElement('text', 'email', array(
-            'label'      => 'Email:',
+            'label'      => 'Page title:',
             'required'   => false,
             'filters'    => array('StringTrim'),
             'validators' => array(
-                'EmailAddress',
-            )
+                array('validator' => 'StringLength', 'options' => array(0, 140))
+                )
         ));
 
-        // Add the comment element
+        // Add the content element
         $this->addElement('textarea', 'comment', array(
-            'label'      => 'Post:',
+            'label'      => 'Page content:',
             'required'   => true,
             'validators' => array(
-                array('validator' => 'StringLength', 'options' => array(0, 140))
+                array('validator' => 'StringLength', 'options' => array())
                 )
         ));
 
         // Add the submit button
         $this->addElement('submit', 'submit', array(
             'ignore'   => true,
-            'label'    => 'Post Something',
+            'label'    => 'Submit',
         ));
 
         // And finally add some CSRF protection
