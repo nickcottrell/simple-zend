@@ -10,7 +10,7 @@ class Application_Form_Quickpost extends Zend_Form
 
         // Add an email element
         $this->addElement('text', 'email', array(
-            'label'      => 'email:',
+            'label'      => 'Email:',
             'required'   => true,
 			'filters'    => array('StringTrim'),
             'validators' => array(

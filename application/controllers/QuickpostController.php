@@ -7,15 +7,6 @@ class QuickpostController extends Zend_Controller_Action
     {
         /* Initialize action controller here */
     }
-	
-
-    public function indexAction()
-    {
-
-		$quickpost = new Application_Model_QuickpostMapper();	
-		$this->view->entries = $quickpost->fetchAll();
-    }
-
 
     public function postAction()
     {
@@ -36,5 +27,4 @@ class QuickpostController extends Zend_Controller_Action
 
 
 }
-
 
